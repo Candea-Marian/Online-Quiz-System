@@ -1,4 +1,4 @@
-import { scienceQuestions } from "./questions.js";
+import { scienceQuestions } from "./scripts/questions.js";
 
 var currentQuestionIndex = 0;
 var score = 0;
