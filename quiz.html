@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en" class="h-100" data-bs-theme="auto">
-    <head><script src="../assets/js/color-modes.js"></script>
+    <head>
+      
+      <script src="assets/js/color-modes.js"></script>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -91,6 +93,9 @@
     </style>
 
         <link href="main.css" rel="stylesheet">
+        <script type="module" src="scripts/questions.js"></script>
+        <script type="module" src="scripts/main.js" defer></script>
+        
     </head>
     <body class="d-flex h-100 text-center siemens-bg">
 
@@ -110,30 +115,11 @@
             </header>
 
             <main id="question-container" class="px-3">
-                <h1 id="question" class="siemens-text-color">Care este capitala
-                    Angliei?</h1>
+                <h1 id="question" class="siemens-text-color"></h1>
                 <br>
                 <div class="btn-group-vertical" role="group"
                     aria-label="choice buttons">
-                    <input type="radio" class="btn-check" name="btnradio"
-                        id="btnradio1" autocomplete="off">
-                    <label class="btn btn-outline-primary border-custom"
-                        for="btnradio1">Irlanda</label>
-
-                    <input type="radio" class="btn-check" name="btnradio"
-                        id="btnradio2" autocomplete="off">
-                    <label class="btn btn-outline-primary border-custom"
-                        for="btnradio2">Rusia</label>
-
-                    <input type="radio" class="btn-check" name="btnradio"
-                        id="btnradio3" autocomplete="off">
-                    <label class="btn btn-outline-primary border-custom"
-                        for="btnradio3">Londra</label>
-
-                    <input type="radio" class="btn-check" name="btnradio"
-                        id="btnradio4" autocomplete="off">
-                    <label class="btn btn-outline-primary border-custom"
-                        for="btnradio4">Buckingham</label>
+                    
                 </div>
             </main>
 
