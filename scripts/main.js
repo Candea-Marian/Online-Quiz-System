@@ -81,15 +81,18 @@ function submitAnswer(selectedAnswer) {
     choicesBlock.parentNode.removeChild(choicesBlock);
 
     // Display final score
-    alert(`Quiz complete! Your score: ${score}/${scienceQuestions.length}`);
     displayResultTable();
   }
 }
 
 function displayResultTable() {
+  const scoreText = document.createElement("h3");
+  scoreText.textContent = `Score: ${score} out of ${scienceQuestions.length}`;
+
   // Create a table element
   const resultTable = document.createElement("table");
   resultTable.border = "1";
+  resultTable.classList.add("custom-table");
 
   // Create table header
   const headerRow = resultTable.createTHead().insertRow();
@@ -106,6 +109,12 @@ function displayResultTable() {
     ["question", "correctAnswer", "userAnswer"].forEach((prop) => {
       const cell = row.insertCell();
       cell.textContent = answer[prop];
+
+      // Check if the current cell corresponds to the user's answer
+      if (prop === "userAnswer") {
+        // Apply color based on correctness
+        cell.style.color = answer.userAnswer !== answer.correctAnswer ? "red" : "green";
+      }
     });
   });
 
@@ -115,7 +124,12 @@ function displayResultTable() {
 
   // Append the table to the document body (or another target element)
   const questionContainer = document.getElementById("question-container");
+  questionContainer.appendChild(scoreText);
   questionContainer.appendChild(resultTable);
+  
+    // Apply styles to make the container scrollable
+  questionContainer.style.overflow = "auto";
+  questionContainer.style.maxHeight = "600px"; // Set the maximum heigh
 }
 
 shuffleArray(scienceQuestions);
