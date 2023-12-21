@@ -24,7 +24,6 @@ Open your terminal or command prompt and run the following command to clone the 
 git clone https://github.com/Candea-Marian/Online-Quiz-System.git
 ```
 #### Navigate to the Project Directory
-Change into the project directory:
 ```bash
 cd Online-Quiz-System
 ```
