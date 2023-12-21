@@ -87,28 +87,28 @@ function shuffleArray(array) {
 #### User Interface Functions
 The code then defines functions for populating choice buttons, rendering questions, submitting answers, and transitioning to the next step.
 
-**populateChoiceButtons** function<br>
-* This function dynamically creates radio buttons for each answer choice and associates them with a question. It clears previous choices and adds event listeners for user interaction.
+* **populateChoiceButtons** function<br>
+This function dynamically creates radio buttons for each answer choice and associates them with a question. It clears previous choices and adds event listeners for user interaction.
 
-**renderQuestion** function<br>
-* This function updates the HTML elements to display the current question and its choices. It calls populateChoiceButtons to handle the creation of choice buttons.
+* **renderQuestion** function<br>
+This function updates the HTML elements to display the current question and its choices. It calls populateChoiceButtons to handle the creation of choice buttons.
 
-**submitAnswer** function<br>
+* **submitAnswer** function<br>
 This function compares the selected answer with the correct answer, updates the user's score, and records the user's answer. It then calls goToTheNextStep to proceed to the next question.
 
-**goToTheNextStep** function<br>
+* **goToTheNextStep** function<br>
 This function determines whether to move to the next question or finish the quiz. If there are more questions, it updates the question index and renders the next question; otherwise, it clears the main block and displays the results.
 
-**clearTheMainElement** function<br>
+* **clearTheMainElement** function<br>
 This function removes the question and choices blocks from the HTML, making space for the score and answer table.
 
 #### Result Display Functions
 The code provides functions for displaying the quiz results in a table format.
 
-**populateResultTable** Function
+* **populateResultTable** function
 This function creates a table with headers ("Question," "Correct Answer," "Your Answer") and populates the table body with user answers. It colors the user's answer cell based on correctness (red for incorrect, green for correct).
 
-**displayResults** Function
+* **displayResults** function
 This function creates and appends elements to display the user's score and the result table. It sets styling for the container to make it scrollable.
 
 #### Initialization
