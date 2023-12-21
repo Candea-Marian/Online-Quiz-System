@@ -21,7 +21,7 @@ Before you begin, make sure you have git installed on your machine:
 Open your terminal or command prompt and run the following command to clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/AwesomeWebPage.git
+git clone https://github.com/Candea-Marian/Online-Quiz-System.git
 ```
 #### Navigate to the Project Directory
 Change into the project directory:
