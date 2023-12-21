@@ -4,7 +4,7 @@ var currentQuestionIndex = 0;
 var score = 0;
 var userAnswers = [];
 
-/* Randomize array in-place using Durstenfeld shuffle algorithm */
+// randomize array using Durstenfeld shuffle algorithm
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
@@ -14,22 +14,10 @@ function shuffleArray(array) {
   }
 }
 
-// Function to render a question
-function renderQuestion(question) {
-  const questionElement = document.getElementById("question");
-  const choicesContainer = document.querySelector(".btn-group-vertical");
-
-  // Check if the element with ID "question" exists
-  if (!questionElement) {
-    console.error('Element with ID "question" not found');
-    return;
-  }
-
-  // Clear previous content
-  questionElement.textContent = question.question;
+function populateChoiceButtons(choicesContainer, question) {
+  // clear previous choices
   choicesContainer.innerHTML = "";
 
-  // Populate choices
   question.choices.forEach((choice, index) => {
     const input = document.createElement("input");
     input.type = "radio";
@@ -46,90 +34,106 @@ function renderQuestion(question) {
     choicesContainer.appendChild(input);
     choicesContainer.appendChild(label);
 
-    // Add event listener for radio button click
+    // event listener for radio button click
     input.addEventListener("click", function () {
       submitAnswer(choice);
     });
   });
 }
 
+function renderQuestion(question) {
+  const questionElement = document.getElementById("question");
+  const choicesContainer = document.querySelector(".btn-group-vertical");
+
+  questionElement.textContent = question.questionText;
+
+  populateChoiceButtons(choicesContainer, question);
+}
+
 function submitAnswer(selectedAnswer) {
   const correctAnswer = scienceQuestions[currentQuestionIndex].correctAnswer;
 
-  // Check if the selected answer is correct
   if (selectedAnswer === correctAnswer) {
     score++;
   }
 
   if (selectedAnswer) {
     userAnswers.push({
-      question: scienceQuestions[currentQuestionIndex].question,
+      question: scienceQuestions[currentQuestionIndex].questionText,
       correctAnswer: correctAnswer,
       userAnswer: selectedAnswer,
     });
   }
 
-  // Move to the next question or finish the quiz
+  goToTheNextStep();
+}
+
+function goToTheNextStep() {
+  // move to the next question or finish the quiz
   if (currentQuestionIndex < scienceQuestions.length - 1) {
     currentQuestionIndex++;
     renderQuestion(scienceQuestions[currentQuestionIndex]);
   } else {
-    // Remove the 'main' element
-    const questionBlock = document.getElementById("question");
-    const choicesBlock = document.querySelector(".btn-group-vertical");
-    questionBlock.parentNode.removeChild(questionBlock);
-    choicesBlock.parentNode.removeChild(choicesBlock);
-
-    // Display final score
-    displayResultTable();
+    // remove the main block contents to make space for the score and answer table
+    clearTheMainElement();
+    // display the results
+    displayResults();
   }
 }
 
-function displayResultTable() {
-  const scoreText = document.createElement("h3");
-  scoreText.textContent = `Score: ${score} out of ${scienceQuestions.length}`;
+function clearTheMainElement() {
+  const questionBlock = document.getElementById("question");
+  const choicesBlock = document.querySelector(".btn-group-vertical");
+  questionBlock.parentNode.removeChild(questionBlock);
+  choicesBlock.parentNode.removeChild(choicesBlock);
+}
 
-  // Create a table element
-  const resultTable = document.createElement("table");
-  resultTable.border = "1";
+function populateResultTable(resultTable) {
+  //resultTable.border = "1"; --> it seems that this practice is deprecated, ill do it in css
   resultTable.classList.add("custom-table");
 
-  // Create table header
+  //table header
   const headerRow = resultTable.createTHead().insertRow();
-  ["Question", "Correct Answer", "User Answer"].forEach((headerText) => {
+  ["Question", "Correct Answer", "Your Answer"].forEach((headerText) => {
     const th = document.createElement("th");
     th.textContent = headerText;
     headerRow.appendChild(th);
   });
 
-  // Create table body
+  //table body
   const resultTableBody = resultTable.createTBody();
   userAnswers.forEach((answer) => {
     const row = resultTableBody.insertRow();
-    ["question", "correctAnswer", "userAnswer"].forEach((prop) => {
+    ["question", "correctAnswer", "userAnswer"].forEach((questionElement) => {
       const cell = row.insertCell();
-      cell.textContent = answer[prop];
+      cell.textContent = answer[questionElement]; // like scienceQuestion[question] or scienceQuestion[correctAnswer]
 
-      // Check if the current cell corresponds to the user's answer
-      if (prop === "userAnswer") {
-        // Apply color based on correctness
+      if (questionElement === "userAnswer") {
+        //color based on correctness
         cell.style.color = answer.userAnswer !== answer.correctAnswer ? "red" : "green";
       }
     });
   });
 
-  // Apply styles to center the table
   resultTable.style.margin = "auto";
   resultTable.style.textAlign = "center";
+}
 
-  // Append the table to the document body (or another target element)
+function displayResults() {
+  const scoreText = document.createElement("h3");
+  scoreText.textContent = "Score: ${score} out of ${scienceQuestions.length}";
+
+  const resultTable = document.createElement("table");
+  populateResultTable(resultTable);
+
+  //append the table and score to the main block
   const questionContainer = document.getElementById("question-container");
   questionContainer.appendChild(scoreText);
   questionContainer.appendChild(resultTable);
-  
-    // Apply styles to make the container scrollable
+
+  //this is just for the container to be scrollable
   questionContainer.style.overflow = "auto";
-  questionContainer.style.maxHeight = "600px"; // Set the maximum heigh
+  questionContainer.style.maxHeight = "600px";
 }
 
 shuffleArray(scienceQuestions);

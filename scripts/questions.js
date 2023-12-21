@@ -1,58 +1,58 @@
 const scienceQuestions = [
   {
     id: 1,
-    question: "What is the theoretical maximum density of a black hole?",
+    questionText: "WhatText is the theoretical maximum density of a black hole?",
     choices: ["1 g/cm³", "1,000 g/cm³", "Infinite", "100 g/cm³"],
     correctAnswer: "Infinite",
   },
   {
     id: 2,
-    question:
+    questionText:
       "In organic chemistry, what is the term for a reaction where a molecule gains electrons?",
     choices: ["Oxidation", "Reduction", "Isomerization", "Substitution"],
     correctAnswer: "Reduction",
   },
   {
     id: 3,
-    question:
+    questionText:
       "What is the minimum number of dimensions required for string theory to be mathematically consistent?",
     choices: ["3", "4", "10", "11"],
     correctAnswer: "10",
   },
   {
     id: 4,
-    question: "Which element has the highest melting point?",
+    questionText: "Which element has the highest melting point?",
     choices: ["Tungsten", "Rhenium", "Osmium", "Platinum"],
     correctAnswer: "Rhenium",
   },
   {
     id: 5,
-    question:
+    questionText:
       "In genetics, what is the term for a sudden, marked variation in an individual's DNA sequence?",
     choices: ["Mutation", "Polymorphism", "Allele", "Genotype"],
     correctAnswer: "Mutation",
   },
   {
     id: 6,
-    question: "What is the most abundant gas in the Earth's atmosphere?",
+    questionText: "What is the most abundant gas in the Earth's atmosphere?",
     choices: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"],
     correctAnswer: "Nitrogen",
   },
   {
     id: 7,
-    question: "Which subatomic particle is responsible for chemical bonding?",
+    questionText: "Which subatomic particle is responsible for chemical bonding?",
     choices: ["Proton", "Neutron", "Electron", "Quark"],
     correctAnswer: "Electron",
   },
   {
     id: 8,
-    question: "What is the largest planet in our solar system?",
+    questionText: "What is the largest planet in our solar system?",
     choices: ["Earth", "Jupiter", "Saturn", "Neptune"],
     correctAnswer: "Jupiter",
   },
   {
     id: 9,
-    question: "In biochemistry, what is the 'central dogma'?",
+    questionText: "In biochemistry, what is the 'central dogma'?",
     choices: [
       "DNA replication",
       "RNA transcription",
@@ -63,32 +63,32 @@ const scienceQuestions = [
   },
   {
     id: 10,
-    question: "What is the speed of light in a vacuum (approximately)?",
+    questionText: "What is the speed of light in a vacuum (approximately)?",
     choices: ["300,000 km/s", "150,000 km/s", "600,000 km/s", "1,000,000 km/s"],
     correctAnswer: "300,000 km/s",
   },
   {
     id: 11,
-    question:
+    questionText:
       "What is the process by which plants make their own food using sunlight?",
     choices: ["Photosynthesis", "Respiration", "Fermentation", "Transpiration"],
     correctAnswer: "Photosynthesis",
   },
   {
     id: 12,
-    question: "Which element is essential for all organic compounds?",
+    questionText: "Which element is essential for all organic compounds?",
     choices: ["Carbon", "Oxygen", "Hydrogen", "Nitrogen"],
     correctAnswer: "Carbon",
   },
   {
     id: 13,
-    question: "What is the largest organ in the human body?",
+    questionText: "What is the largest organ in the human body?",
     choices: ["Heart", "Brain", "Skin", "Liver"],
     correctAnswer: "Skin",
   },
   {
     id: 14,
-    question: "What is the speed of light in a vacuum?",
+    questionText: "What is the speed of light in a vacuum?",
     choices: [
       "299,792 kilometers per second",
       "150,000 kilometers per second",
@@ -99,7 +99,7 @@ const scienceQuestions = [
   },
   {
     id: 15,
-    question: "Which gas is responsible for the greenhouse effect on Earth?",
+    questionText: "Which gas is responsible for the greenhouse effect on Earth?",
     choices: ["Carbon Dioxide", "Oxygen", "Nitrogen", "Methane"],
     correctAnswer: "Carbon Dioxide",
   },
