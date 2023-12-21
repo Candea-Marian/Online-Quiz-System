@@ -34,6 +34,7 @@ function shuffleArray(array) {
     array[j] = temp;
   }
 }
+```
 
 ## Class and Database Representation (Explanation Only)
 
