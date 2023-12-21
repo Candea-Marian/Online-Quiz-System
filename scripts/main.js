@@ -121,7 +121,7 @@ function populateResultTable(resultTable) {
 
 function displayResults() {
   const scoreText = document.createElement("h3");
-  scoreText.textContent = 'Score: ${score} out of ${scienceQuestions.length}';
+  scoreText.textContent = `Score: ${score} out of ${scienceQuestions.length}`;
 
   const resultTable = document.createElement("table");
   populateResultTable(resultTable);
