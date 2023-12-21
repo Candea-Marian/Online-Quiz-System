@@ -87,19 +87,19 @@ function shuffleArray(array) {
 #### User Interface Functions
 The code then defines functions for populating choice buttons, rendering questions, submitting answers, and transitioning to the next step.
 
-**populateChoiceButtons** Function
-This function dynamically creates radio buttons for each answer choice and associates them with a question. It clears previous choices and adds event listeners for user interaction.
+**populateChoiceButtons** function<br>
+* This function dynamically creates radio buttons for each answer choice and associates them with a question. It clears previous choices and adds event listeners for user interaction.
 
-**renderQuestion** Function
-This function updates the HTML elements to display the current question and its choices. It calls populateChoiceButtons to handle the creation of choice buttons.
+**renderQuestion** function<br>
+* This function updates the HTML elements to display the current question and its choices. It calls populateChoiceButtons to handle the creation of choice buttons.
 
-**submitAnswer** Function
+**submitAnswer** function<br>
 This function compares the selected answer with the correct answer, updates the user's score, and records the user's answer. It then calls goToTheNextStep to proceed to the next question.
 
-**goToTheNextStep** Function
+**goToTheNextStep** function<br>
 This function determines whether to move to the next question or finish the quiz. If there are more questions, it updates the question index and renders the next question; otherwise, it clears the main block and displays the results.
 
-**clearTheMainElement** Function
+**clearTheMainElement** function<br>
 This function removes the question and choices blocks from the HTML, making space for the score and answer table.
 
 #### Result Display Functions
