@@ -5,9 +5,9 @@
 ## Getting Started
 
 ### The easy way
-#### View on GitHub Pages
-This project is hosted on GitHub Pages, and you can view it live by visiting:
-[https://candea-marian.github.io/Online-Quiz-System]
+
+This project is hosted on GitHub Pages, and you can view it live by visiting:<br>
+https://candea-marian.github.io/Online-Quiz-System
 
 ### Clone the Repository way
 
