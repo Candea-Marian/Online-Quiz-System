@@ -175,11 +175,6 @@ A **Quiz** can have multiple **Questions** and a **Question** can be used to mul
 
 A **Question** can have multiple **Choices** so there is a *one to many* relation.
 
-## Usage
-
-1. Open `index.html` in a web browser.
-2. Answer each question by selecting a choice.
-3. The app will display the score and a table summarizing your answers at the end of the quiz.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
